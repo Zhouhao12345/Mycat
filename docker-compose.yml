@@ -1,0 +1,11 @@
+mycat:
+  image: longhronshens/mycat-docker
+  ports:
+    - 127.0.0.1:8066:8066
+    - 127.0.0.1:9066:9066
+  volumes:
+    - ./volumes/mycat/conf:/usr/local/mycat/conf
+    - ./volumes/mycat/logs:/usr/local/mycat/logs
+  external_links:
+    - mysqlmycat_mysql-slaver_1:mysql-salver
+    - mysqlmycat_mysql-master_1:mysql-master
